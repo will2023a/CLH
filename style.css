@@ -1,0 +1,355 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;    
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #182633;
+  }
+ #titleavaliacao {
+    text-align: center;
+    margin: 5px auto 10px auto;
+  }
+  
+  .servicos,
+  .sobre-nos,
+  .contato {
+      background-color: #f0f0f0; /* Aplique a mesma cor de fundo aqui */
+      padding: 40px 20px;
+      text-align: center;
+  }
+
+  h1, h2 {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    color: #182633;
+  }
+  
+  #title {
+    text-align: center;
+    margin-bottom: 20px;
+    margin: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 15px;
+  }
+  
+  /* Centralização e estilização do container principal */
+  .container2 {
+       background-color:#f4f4f4 ;
+       margin-left: 0;
+       margin-right: 0;
+  }
+  
+  .main-content {
+    /* background-color: #fff;*/
+    border-radius: 8px;
+    box-shadow: 0 0 10px #182633;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 10px;
+  }
+  
+   p,
+   ul {
+    margin-bottom: 15px;
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+   ul li {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  strong {
+    color: #182633;
+  }
+
+  .grid-avaliacoes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.bloco-avaliacao {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #182633;
+}
+
+.framework-icons {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.framework-icons i {
+    font-size: 30px;
+   
+    box-shadow: 0 0 10px #182633;
+    padding: 10px;
+}
+  
+  /* Estilos do cabeçalho */
+  header {
+    background-color: #182633;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+  }
+  
+  header .logo img {
+    width: 200px;
+    height: auto;
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    padding-top: 10px;
+  }
+  
+  header nav ul li a {
+    color: #fcc300;
+    text-decoration: none;
+    font-size: 1.1em;
+  }
+  
+  header nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilos do rodapé */
+  footer {
+    background-color: #182633;
+    color: #fcc300;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .social-icons a {
+    color: #fcc300;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+  
+  /* Ajuste de imagens */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+    }
+    
+    header nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .main-content {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header .logo img {
+      width: 120px;
+    }
+  
+    header nav ul li a {
+      font-size: 1em;
+    }
+ 
+  
+    footer {
+      padding: 15px;
+    }
+  }
+  /* Estilos para a seção de serviços */
+.servicos {
+    padding: 40px 20px;
+    background-color:#f0f0f0;
+    text-align: center;
+  }
+  
+  .servicos h2 {
+    font-size: 2em;
+    color: #182633;
+    margin-bottom: 40px;
+  }
+  
+  .grid-servicos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .servico {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #182633;
+  }
+  
+  .servico h3 {
+    font-size: 1.5em;
+    color: #182633;
+    margin-bottom: 15px;
+  }
+  
+  .servico ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .servico ul li {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos responsivos para telas menores */
+  @media (max-width: 768px) {
+    .grid-servicos {
+      grid-template-columns: 1fr; /* Em telas menores, as colunas ficam empilhadas */
+    }
+  }
+  
+
+  /* Estilo da seção Sobre Nós */
+.sobre-nos {
+    padding: 40px 20px;
+    background-color: #f1f1f1;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .sobre-nos h2 {
+    font-size: 2em;
+    color: #182633;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .sobre-nos p {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+
+  /* Estilo do formulário de contato */
+.form-contato {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color:#182633;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #182633;
+    color: #fff
+  }
+  
+  .form-contato label {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .form-contato input, 
+  .form-contato textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-contato button {
+    background-color: #f8f8f8;
+    color: #182633;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form-contato button:hover {
+    background-color: #30475e;
+  }
+  
+  /* Estilo do ícone do WhatsApp */
+  .fab.fa-whatsapp {
+    color: #25D366;
+    font-size: 1.5em;
+    margin-right: 8px;
+  }
+  /* Centralizar a seção de contato */
+.contato {
+    text-align: center; /* Centraliza o texto */
+    padding: 40px 20px;
+    background-color:#f0f0f0;
+}
+
+/* Ajuste de parágrafos e links */
+.contato p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px; /* Espaçamento entre os elementos */
+    display: block; /* Garante que cada parágrafo ocupe uma linha */
+}
+
+.contato a {
+    color: #182633;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.contato a:hover {
+    text-decoration: underline;
+}
+
+/* Centralizar o formulário */
+.form-contato {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* Estilo do ícone do WhatsApp */
+.fab.fa-whatsapp {
+    color: #25D366;
+    font-size: 1.5em;
+    margin-right: 8px;
+    vertical-align: middle; /* Alinha o ícone com o texto */
+}
+
+/* Para garantir que o ícone do WhatsApp e o texto estejam em linha */
+.whatsapp-link {
+    display: flex; /* Usando flexbox para alinhar verticalmente */
+    align-items: center; /* Alinha verticalmente o ícone com o texto */
+    justify-content: center; /* Centraliza o conteúdo */
+    margin-bottom: 20px; /* Espaçamento abaixo do ícone */
+}
+
