@@ -2,6 +2,17 @@
 
 namespace processar_formulario;
 
+// Certifique-se de que a entrada de dados do formulário está sendo recebida
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nome = $_POST['nome'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $mensagem = $_POST['mensagem'] ?? '';
+
+    // Instancia a classe Form
+    $form = new Form();
+    $form->enviarFormulario($nome, $email, $mensagem);
+}
+
 class Form {
     public function enviarFormulario($nome, $email, $mensagem) {
         // Monta o corpo do e-mail
