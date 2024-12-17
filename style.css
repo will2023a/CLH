@@ -6,13 +6,48 @@
   
   body {
     font-family: Arial, sans-serif;
-    background-color: #182633;
+    background-color: #f4f4f4;
     color: #182633;
   }
- #titleavaliacao {
+  .carousel-inner {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carousel-item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .d-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .bloco-avaliacao {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Garante que cada bloco tenha 30% da largura */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #000;
+  }
+  
+  
+
+
+ /* #titleavaliacao {
     text-align: center;
     margin: 5px auto 10px auto;
-  }
+  } */
   
   .servicos,
   .sobre-nos,

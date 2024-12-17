@@ -36,7 +36,7 @@ function enviarFormulario($nome, $email, $mensagem) {
         $_SESSION['tipo'] = "erro";
     }
     // Redireciona para a página inicial
-    header('Location: index.html');
+    header('Location: index.php');
     exit();
 }
 
