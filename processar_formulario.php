@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -7,36 +8,36 @@ require 'vendor/autoload.php'; // Certifique-se de que o caminho está correto
 
 // Função para enviar e-mail
 function enviarFormulario($nome, $email, $mensagem) {
-    $mail = new PHPMailer(true);
-
     try {
-        // Configurações do servidor
+        $mail = new PHPMailer(true);
         $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com'; // Endereço do servidor SMTP
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'wilpo93.wo@gmail.com'; // Seu e-mail
-        $mail->Password   = 'Nospornos08@'; // Senha do e-mail ou App Password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = 587;
+        $mail->Host = 'sandbox.smtp.mailtrap.io';
+        $mail->SMTPAuth = true;
+        $mail->Port = 2525;
+        $mail->Username = 'b87de3a45ffed1';
+        $mail->Password = '0c1ac19df262fd';
 
-        // Remetente e destinatário
-        $mail->setFrom($email, $nome);
-        $mail->addAddress('wilpo93.wo@gmail.com', 'William');
-
-        // Conteúdo do e-mail
+        // Configurações do e-mail
+        $mail->setFrom('noreply@blessplan.com', 'BlessPlan');
+        $mail->addAddress($email, $nome);
         $mail->isHTML(true);
         $mail->Subject = 'Contato Site BLESSED';
         $mail->Body    = "Nome: $nome<br>Email: $email<br>Mensagem: $mensagem";
 
         $mail->send();
-        echo "Mensagem enviada com sucesso!";
-        
-        // Redireciona para a página inicial
-        header('Location: index.html');
-        exit();
+
+        // Mensagem de sucesso na sessão
+        $_SESSION['mensagem'] = "Mensagem enviada com sucesso!";
+        $_SESSION['tipo'] = "sucesso";
+
     } catch (Exception $e) {
-        echo "Mensagem não enviada. Erro: {$mail->ErrorInfo}";
+        // Mensagem de erro na sessão
+        $_SESSION['mensagem'] = "Erro ao enviar mensagem: {$mail->ErrorInfo}";
+        $_SESSION['tipo'] = "erro";
     }
+    // Redireciona para a página inicial
+    header('Location: index.html');
+    exit();
 }
 
 // Verifica se o formulário foi enviado
