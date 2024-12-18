@@ -9,39 +9,32 @@
     background-color: #f4f4f4;
     color: #182633;
   }
-  .carousel-inner {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .carousel-item {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .d-flex {
-    display: flex;
-    justify-content: space-between;
-  }
-  
+  /* Estilo para os blocos de avaliação */
+.bloco-avaliacao {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%; /* Garante que cada bloco tenha 30% da largura */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Estilo para as setas de navegação */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #000; /* Altere a cor das setas para o que desejar */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
   .bloco-avaliacao {
-    text-align: center;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 30%; /* Garante que cada bloco tenha 30% da largura */
-    transition: all 0.3s ease-in-out;
+    width: 100%; /* Ajuste para ocupar toda a largura em telas pequenas */
+    margin-bottom: 15px;
   }
-  
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-color: #000;
-  }
-  
-  
+}
+
 
 
  /* #titleavaliacao {
