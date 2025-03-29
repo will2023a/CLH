@@ -195,7 +195,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #182633;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   backdrop-filter: blur(10px);
@@ -537,7 +537,7 @@ body {
       <div class="header-content">
         <div class="logo">
           <img src="img/icon.png" alt="Logo Blessplan Digital" class="logo-img">
-          <span class="logo-text">Blessplan Digital</span>
+          <!-- <span class="logo-text">Blessplan Digital</span> -->
         </div>
         
         <nav class="main-nav">
@@ -767,7 +767,6 @@ body {
     <div class="footer-content">
       <div class="footer-brand">
         <img src="img/icon.png" alt="Blessplan Digital" class="footer-logo">
-        <span class="footer-name">Blessplan Digital - SOLUÇÕES T.I</span>
       </div>
       
       <p class="footer-text">Visite nossas páginas e fique por dentro do que há de melhor no mercado.</p>
