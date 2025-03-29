@@ -8,14 +8,15 @@ session_start();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blessplan Digital</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- PrimeFlex for modern layout -->
+  <link rel="stylesheet" href="https://unpkg.com/primeflex@3.3.0/primeflex.css">
+  <!-- PrimeIcons for modern icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/primeicons/6.0.1/primeicons.min.css">
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/890bf4d937.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body>
+<body class="p-4">
   <?php
   // Verifica se há mensagens de sessão
   if (isset($_SESSION['mensagem'])) {
@@ -26,112 +27,83 @@ session_start();
   }
   ?>
 
-  <body>
-    <header>
-      <div class="logo">
-        <img src="img/icon.png" alt="Logo">
-      </div>
-
-      <nav>
-        <ul>
-          <li><a href="/index.php">Home</a></li>
-          <li><a href="/servico.html">Serviços</a></li>
-          <li><a href="/sobrenos.html">Sobre Nós</a></li>
-          <li><a href="/contato.html">Contato</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class="container2">
-      <div class="container">
-        <h1 id="title">Blessplan Digital</h1>
-        <div class="main-content">
-          <p>
-            Especialistas em serviços de TI, focamos em soluções personalizadas para otimizar seu negócio e mantê-lo à frente no mercado.
-          </p>
-          <ul>
-            <li><strong>Desenvolvimento de Sistemas:</strong> Soluções sob medida para suas necessidades.</li>
-            <li><strong>Suporte Técnico:</strong> Assistência contínua para operações otimizadas.</li>
-            <li><strong>Análise de Dados:</strong> Transformamos dados em insights valiosos.</li>
-            <li><strong>Consultoria em TI:</strong> Orientação especializada para transformação digital.</li>
-          </ul>
-        </div>
-
-        <h2 id="titleavaliacao">Avaliações</h2>
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="d-flex justify-content-around">
-                <div class="bloco-avaliacao">
-                  ⭐️⭐️⭐️⭐️⭐️
-                  <p><strong>Eduardo - Gerente da empresa Global projetores</strong></p>
-                  <p>Serviço com Power Apps e Power Automate para gerar orçamento e enviar no e-mail do responsável.</p>
-                </div>
-                <div class="bloco-avaliacao">
-                  ⭐️⭐️⭐️⭐️⭐️
-                  <p><strong>Anderson - Diretor de T.I Transcourier</strong></p>
-                  <p>Serviço chamada de API para consultar minutas direto no Google Sheets.</p>
-                </div>
-                <div class="bloco-avaliacao">
-                  ⭐️⭐️⭐️⭐️⭐️
-                  <p><strong>André Galvão - Diretor de Imobiliária - Unai - MG</strong></p>
-                  <p>Serviço de tratamento de Big Data para dashboards e emissão de orçamento consultando o CPF do cliente.</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="d-flex justify-content-around">
-                <div class="bloco-avaliacao">
-                  ⭐️⭐️⭐️⭐️⭐️
-                  <p><strong>Marlon - Diretor de T.I - SOS4PATAS - PIX Sicredi</strong></p>
-                  <p>Serviço de API de pagamento e webhook PIX Sicredi no WordPress.</p>
-                </div>
-                <div class="bloco-avaliacao">
-                  ⭐️⭐️⭐️⭐️⭐️
-                  <p><strong>Anderson - Diretor de T.I Infra - Triunfo Saúde</strong></p>
-                  <p>Desenvolvimento de um sistema simples com login e senha, seguido de cadastro de pacientes de saúde.</p>
-                </div>
-                <div class="bloco-avaliacao">
-                  ⭐️⭐️⭐️⭐️⭐️
-                  <p><strong>João - CEO - Startup X</strong></p>
-                  <p>Desenvolvimento de uma plataforma de e-commerce com integração de pagamento.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-
-
-
-        <div class="framework-icons">
-          <h2>Frameworks que Trabalhamos</h2>
-          <i class="fab fa-react"></i>
-          <i class="fab fa-node"></i>
-          <i class="fab fa-php"></i>
-          <i class="fab fa-java"></i>
-          <i class="fab fa-python"></i>
-        </div>
-      </div>
+  <header class="flex align-items-center justify-content-between mb-4">
+    <div class="logo">
+      <img src="img/icon.png" alt="Logo" class="w-4rem">
     </div>
+    <nav>
+      <ul class="list-none flex gap-3">
+        <li><a href="/index.php" class="text-primary hover:text-primary-600">Home</a></li>
+        <li><a href="/servico.html" class="text-primary hover:text-primary-600">Serviços</a></li>
+        <li><a href="/sobrenos.html" class="text-primary hover:text-primary-600">Sobre Nós</a></li>
+        <li><a href="/contato.html" class="text-primary hover:text-primary-600">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer>
-      <p>Todos os direitos reservados</p>
-      <p>Blessplan Digital - SOLUÇÕES T.I</p>
-      <p>Visite nossas páginas e fique por dentro do que há de melhor no mercado.</p>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/blessplan_digital/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://github.com/will2023a" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fas fa-brain"></i></a>
+  <main>
+    <section class="mb-4">
+      <h1 class="text-4xl text-primary mb-2">Blessplan Digital</h1>
+      <p class="text-lg">
+        Especialistas em serviços de TI, focamos em soluções personalizadas para otimizar seu negócio e mantê-lo à frente no mercado.
+      </p>
+      <ul class="list-none mt-3">
+        <li><i class="pi pi-check-circle text-primary"></i> <strong>Desenvolvimento de Sistemas:</strong> Soluções sob medida para suas necessidades.</li>
+        <li><i class="pi pi-check-circle text-primary"></i> <strong>Suporte Técnico:</strong> Assistência contínua para operações otimizadas.</li>
+        <li><i class="pi pi-check-circle text-primary"></i> <strong>Análise de Dados:</strong> Transformamos dados em insights valiosos.</li>
+        <li><i class="pi pi-check-circle text-primary"></i> <strong>Consultoria em TI:</strong> Orientação especializada para transformação digital.</li>
+      </ul>
+    </section>
+
+    <section class="mb-4">
+      <h2 class="text-3xl text-primary mb-3">Avaliações</h2>
+      <div class="grid grid-nogutter">
+        <div class="col-12 md:col-4">
+          <div class="card p-3 shadow-2">
+            <span class="text-yellow-500">⭐️⭐️⭐️⭐️⭐️</span>
+            <p><strong>Eduardo - Gerente da empresa Global projetores</strong></p>
+            <p>Serviço com Power Apps e Power Automate para gerar orçamento e enviar no e-mail do responsável.</p>
+          </div>
+        </div>
+        <div class="col-12 md:col-4">
+          <div class="card p-3 shadow-2">
+            <span class="text-yellow-500">⭐️⭐️⭐️⭐️⭐️</span>
+            <p><strong>Anderson - Diretor de T.I Transcourier</strong></p>
+            <p>Serviço chamada de API para consultar minutas direto no Google Sheets.</p>
+          </div>
+        </div>
+        <div class="col-12 md:col-4">
+          <div class="card p-3 shadow-2">
+            <span class="text-yellow-500">⭐️⭐️⭐️⭐️⭐️</span>
+            <p><strong>André Galvão - Diretor de Imobiliária - Unai - MG</strong></p>
+            <p>Serviço de tratamento de Big Data para dashboards e emissão de orçamento consultando o CPF do cliente.</p>
+          </div>
+        </div>
       </div>
-    </footer>
-  </body>
+    </section>
+
+    <section class="mb-4">
+      <h2 class="text-3xl text-primary mb-3">Frameworks que Trabalhamos</h2>
+      <div class="flex gap-3">
+        <i class="pi pi-react text-4xl text-primary"></i>
+        <i class="pi pi-node text-4xl text-primary"></i>
+        <i class="pi pi-php text-4xl text-primary"></i>
+        <i class="pi pi-java text-4xl text-primary"></i>
+        <i class="pi pi-python text-4xl text-primary"></i>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-4 text-center">
+    <p>Todos os direitos reservados</p>
+    <p>Blessplan Digital - SOLUÇÕES T.I</p>
+    <p>Visite nossas páginas e fique por dentro do que há de melhor no mercado.</p>
+    <div class="flex justify-content-center gap-3 mt-2">
+      <a href="https://www.instagram.com/blessplan_digital/" target="_blank"><i class="pi pi-instagram text-2xl"></i></a>
+      <a href="https://github.com/will2023a" target="_blank"><i class="pi pi-github text-2xl"></i></a>
+      <a href="#"><i class="pi pi-brain text-2xl"></i></a>
+    </div>
+  </footer>
+</body>
 
 </html>
