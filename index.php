@@ -14,9 +14,101 @@ session_start();
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/primeicons/6.0.1/primeicons.min.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #002855;
+      color: white;
+      padding: 1rem 2rem;
+      position: relative;
+    }
+
+    header .logo img {
+      max-height: 50px;
+    }
+
+    header nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    header nav ul li a:hover {
+      color: #f9a825;
+    }
+
+    /* Menu de hambúrguer */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: white;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      background-color: #002855;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 1rem;
+    }
+
+    .mobile-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .mobile-menu a:hover {
+      color: #f9a825;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-menu {
+        display: none;
+      }
+
+      .mobile-menu.active {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 
-<body class="p-4">
+<body>
   <?php
   // Verifica se há mensagens de sessão
   if (isset($_SESSION['mensagem'])) {
@@ -27,21 +119,32 @@ session_start();
   }
   ?>
 
-  <header class="flex align-items-center justify-content-between mb-4">
+  <header class="flex align-items-center justify-content-between">
     <div class="logo">
-      <img src="img/icon.png" alt="Logo" class="w-4rem">
+      <img src="img/icon.png" alt="Logo">
     </div>
     <nav>
-      <ul class="list-none flex gap-3">
-        <li><a href="/index.php" class="text-primary hover:text-primary-600">Home</a></li>
-        <li><a href="/servico.html" class="text-primary hover:text-primary-600">Serviços</a></li>
-        <li><a href="/sobrenos.html" class="text-primary hover:text-primary-600">Sobre Nós</a></li>
-        <li><a href="/contato.html" class="text-primary hover:text-primary-600">Contato</a></li>
+      <ul class="flex">
+        <li><a href="/index.php">Home</a></li>
+        <li><a href="/servico.html">Serviços</a></li>
+        <li><a href="/sobrenos.html">Sobre Nós</a></li>
+        <li><a href="/contato.html">Contato</a></li>
       </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="/index.php">Home</a>
+        <a href="/servico.html">Serviços</a>
+        <a href="/sobrenos.html">Sobre Nós</a>
+        <a href="/contato.html">Contato</a>
+      </div>
     </nav>
   </header>
 
-  <main>
+  <main class="p-4">
     <section class="mb-4">
       <h1 class="text-4xl text-primary mb-2">Blessplan Digital</h1>
       <p class="text-lg">
@@ -54,56 +157,20 @@ session_start();
         <li><i class="pi pi-check-circle text-primary"></i> <strong>Consultoria em TI:</strong> Orientação especializada para transformação digital.</li>
       </ul>
     </section>
-
-    <section class="mb-4">
-      <h2 class="text-3xl text-primary mb-3">Avaliações</h2>
-      <div class="grid grid-nogutter">
-        <div class="col-12 md:col-4">
-          <div class="card p-3 shadow-2">
-            <span class="text-yellow-500">⭐️⭐️⭐️⭐️⭐️</span>
-            <p><strong>Eduardo - Gerente da empresa Global projetores</strong></p>
-            <p>Serviço com Power Apps e Power Automate para gerar orçamento e enviar no e-mail do responsável.</p>
-          </div>
-        </div>
-        <div class="col-12 md:col-4">
-          <div class="card p-3 shadow-2">
-            <span class="text-yellow-500">⭐️⭐️⭐️⭐️⭐️</span>
-            <p><strong>Anderson - Diretor de T.I Transcourier</strong></p>
-            <p>Serviço chamada de API para consultar minutas direto no Google Sheets.</p>
-          </div>
-        </div>
-        <div class="col-12 md:col-4">
-          <div class="card p-3 shadow-2">
-            <span class="text-yellow-500">⭐️⭐️⭐️⭐️⭐️</span>
-            <p><strong>André Galvão - Diretor de Imobiliária - Unai - MG</strong></p>
-            <p>Serviço de tratamento de Big Data para dashboards e emissão de orçamento consultando o CPF do cliente.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mb-4">
-      <h2 class="text-3xl text-primary mb-3">Frameworks que Trabalhamos</h2>
-      <div class="flex gap-3">
-        <i class="pi pi-react text-4xl text-primary"></i>
-        <i class="pi pi-node text-4xl text-primary"></i>
-        <i class="pi pi-php text-4xl text-primary"></i>
-        <i class="pi pi-java text-4xl text-primary"></i>
-        <i class="pi pi-python text-4xl text-primary"></i>
-      </div>
-    </section>
   </main>
 
   <footer class="mt-4 text-center">
     <p>Todos os direitos reservados</p>
     <p>Blessplan Digital - SOLUÇÕES T.I</p>
     <p>Visite nossas páginas e fique por dentro do que há de melhor no mercado.</p>
-    <div class="flex justify-content-center gap-3 mt-2">
-      <a href="https://www.instagram.com/blessplan_digital/" target="_blank"><i class="pi pi-instagram text-2xl"></i></a>
-      <a href="https://github.com/will2023a" target="_blank"><i class="pi pi-github text-2xl"></i></a>
-      <a href="#"><i class="pi pi-brain text-2xl"></i></a>
-    </div>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.toggle('active');
+    }
+  </script>
 </body>
 
 </html>
